@@ -47,9 +47,7 @@ What has already been done: On the official website, the WRI shows a map with th
 
 ### Design of the website
 
-### Initial website
-
-Please download this repository. Then, go to the *website* folder and use the command ```http-server``` to access the scratch of our website.
+### [Initial website](https://olivia-fsm.github.io/energyvis.github.io/)
 
 
 ## Milestone 3 (30th May, 5pm)
