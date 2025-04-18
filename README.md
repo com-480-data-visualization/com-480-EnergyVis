@@ -45,7 +45,9 @@ What has already been done: On the official website, the WRI shows a map with th
 
 ## Milestone 2 (18th April, 5pm)
 
-**10% of the final grade**
+### Website
+
+Please download this repository. Then, go to the website folder and use '''http-server''' to access the scratch of our website.
 
 
 ## Milestone 3 (30th May, 5pm)
