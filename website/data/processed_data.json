@@ -1,0 +1,456 @@
+{
+  "plants_latest": [
+    {
+      "country": "France",
+      "lat": 46.2,
+      "lon": 2.2,
+      "fuel": "Hydro",
+      "cap": 1050
+    },
+    {
+      "country": "France",
+      "lat": 48.8,
+      "lon": 2.3,
+      "fuel": "Nuclear",
+      "cap": 900
+    },
+    {
+      "country": "France",
+      "lat": 44.0,
+      "lon": 1.5,
+      "fuel": "Solar",
+      "cap": 250
+    },
+    {
+      "country": "France",
+      "lat": 47.0,
+      "lon": 1.0,
+      "fuel": "Wind",
+      "cap": 100
+    },
+    {
+      "country": "Germany",
+      "lat": 51.1,
+      "lon": 10.4,
+      "fuel": "Coal",
+      "cap": 950
+    },
+    {
+      "country": "Germany",
+      "lat": 53.5,
+      "lon": 9.9,
+      "fuel": "Wind",
+      "cap": 450
+    },
+    {
+      "country": "Germany",
+      "lat": 52.5,
+      "lon": 13.4,
+      "fuel": "Solar",
+      "cap": 200
+    },
+    {
+      "country": "Germany",
+      "lat": 50.0,
+      "lon": 8.0,
+      "fuel": "Gas",
+      "cap": 50
+    },
+    {
+      "country": "USA",
+      "lat": 38.9,
+      "lon": -77.0,
+      "fuel": "Gas",
+      "cap": 1600
+    },
+    {
+      "country": "USA",
+      "lat": 34.0,
+      "lon": -118.2,
+      "fuel": "Solar",
+      "cap": 800
+    },
+    {
+      "country": "USA",
+      "lat": 40.7,
+      "lon": -74.0,
+      "fuel": "Nuclear",
+      "cap": 600
+    },
+    {
+      "country": "USA",
+      "lat": 37.0,
+      "lon": -100.0,
+      "fuel": "Wind",
+      "cap": 300
+    },
+    {
+      "country": "USA",
+      "lat": 36.0,
+      "lon": -115.0,
+      "fuel": "Geothermal",
+      "cap": 100
+    },
+    {
+      "country": "Brazil",
+      "lat": -15.8,
+      "lon": -47.8,
+      "fuel": "Hydro",
+      "cap": 1500
+    },
+    {
+      "country": "Brazil",
+      "lat": -23.5,
+      "lon": -46.6,
+      "fuel": "Oil",
+      "cap": 40
+    },
+    {
+      "country": "Brazil",
+      "lat": -10.0,
+      "lon": -55.0,
+      "fuel": "Solar",
+      "cap": 150
+    },
+    {
+      "country": "Brazil",
+      "lat": -5.0,
+      "lon": -40.0,
+      "fuel": "Wind",
+      "cap": 50
+    },
+    {
+      "country": "China",
+      "lat": 39.9,
+      "lon": 116.4,
+      "fuel": "Coal",
+      "cap": 2000
+    },
+    {
+      "country": "China",
+      "lat": 31.2,
+      "lon": 121.4,
+      "fuel": "Hydro",
+      "cap": 800
+    },
+    {
+      "country": "China",
+      "lat": 22.3,
+      "lon": 114.1,
+      "fuel": "Gas",
+      "cap": 600
+    },
+    {
+      "country": "China",
+      "lat": 35.0,
+      "lon": 105.0,
+      "fuel": "Wind",
+      "cap": 800
+    },
+    {
+      "country": "China",
+      "lat": 40.0,
+      "lon": 110.0,
+      "fuel": "Solar",
+      "cap": 600
+    },
+    {
+      "country": "China",
+      "lat": 30.0,
+      "lon": 108.0,
+      "fuel": "Nuclear",
+      "cap": 150
+    }
+  ],
+  "country_summary": {
+    "France": {
+      "2013": {
+        "total_capacity": 1900,
+        "fuels": {
+          "Hydro": 1050.0,
+          "Nuclear": 800.0,
+          "Solar": 50.0
+        },
+        "green_capacity": 1900,
+        "renewable_capacity": 1100,
+        "green_perc": 100.0,
+        "renewable_perc": 57.9
+      },
+      "2016": {
+        "total_capacity": 2090,
+        "fuels": {
+          "Hydro": 1050.0,
+          "Nuclear": 850.0,
+          "Solar": 150.0,
+          "Wind": 40.0
+        },
+        "green_capacity": 2090,
+        "renewable_capacity": 1240,
+        "green_perc": 100.0,
+        "renewable_perc": 59.3
+      },
+      "2019": {
+        "total_capacity": 2300,
+        "fuels": {
+          "Hydro": 1050.0,
+          "Nuclear": 900.0,
+          "Solar": 250.0,
+          "Wind": 100.0
+        },
+        "green_capacity": 2300,
+        "renewable_capacity": 1400,
+        "green_perc": 100.0,
+        "renewable_perc": 60.9
+      }
+    },
+    "Germany": {
+      "2013": {
+        "total_capacity": 1350,
+        "fuels": {
+          "Coal": 1200.0,
+          "Wind": 150.0
+        },
+        "green_capacity": 150,
+        "renewable_capacity": 150,
+        "green_perc": 11.1,
+        "renewable_perc": 11.1
+      },
+      "2016": {
+        "total_capacity": 1500,
+        "fuels": {
+          "Coal": 1100.0,
+          "Wind": 300.0,
+          "Solar": 100.0
+        },
+        "green_capacity": 400,
+        "renewable_capacity": 400,
+        "green_perc": 26.7,
+        "renewable_perc": 26.7
+      },
+      "2019": {
+        "total_capacity": 1650,
+        "fuels": {
+          "Coal": 950.0,
+          "Wind": 450.0,
+          "Solar": 200.0,
+          "Gas": 50.0
+        },
+        "green_capacity": 650,
+        "renewable_capacity": 650,
+        "green_perc": 39.4,
+        "renewable_perc": 39.4
+      }
+    },
+    "USA": {
+      "2013": {
+        "total_capacity": 2800,
+        "fuels": {
+          "Gas": 2000.0,
+          "Solar": 300.0,
+          "Nuclear": 500.0
+        },
+        "green_capacity": 800,
+        "renewable_capacity": 300,
+        "green_perc": 28.6,
+        "renewable_perc": 10.7
+      },
+      "2016": {
+        "total_capacity": 3000,
+        "fuels": {
+          "Gas": 1800.0,
+          "Solar": 500.0,
+          "Nuclear": 550.0,
+          "Wind": 150.0
+        },
+        "green_capacity": 1200,
+        "renewable_capacity": 650,
+        "green_perc": 40.0,
+        "renewable_perc": 21.7
+      },
+      "2019": {
+        "total_capacity": 3400,
+        "fuels": {
+          "Gas": 1600.0,
+          "Solar": 800.0,
+          "Nuclear": 600.0,
+          "Wind": 300.0,
+          "Geothermal": 100.0
+        },
+        "green_capacity": 1800,
+        "renewable_capacity": 1200,
+        "green_perc": 52.9,
+        "renewable_perc": 35.3
+      }
+    },
+    "Brazil": {
+      "2013": {
+        "total_capacity": 1480,
+        "fuels": {
+          "Hydro": 1400.0,
+          "Oil": 80.0
+        },
+        "green_capacity": 1400,
+        "renewable_capacity": 1400,
+        "green_perc": 94.6,
+        "renewable_perc": 94.6
+      },
+      "2016": {
+        "total_capacity": 1560,
+        "fuels": {
+          "Hydro": 1450.0,
+          "Oil": 60.0,
+          "Solar": 50.0
+        },
+        "green_capacity": 1500,
+        "renewable_capacity": 1500,
+        "green_perc": 96.2,
+        "renewable_perc": 96.2
+      },
+      "2019": {
+        "total_capacity": 1740,
+        "fuels": {
+          "Hydro": 1500.0,
+          "Oil": 40.0,
+          "Solar": 150.0,
+          "Wind": 50.0
+        },
+        "green_capacity": 1700,
+        "renewable_capacity": 1700,
+        "green_perc": 97.7,
+        "renewable_perc": 97.7
+      }
+    },
+    "China": {
+      "2013": {
+        "total_capacity": 3700,
+        "fuels": {
+          "Coal": 2500.0,
+          "Hydro": 600.0,
+          "Gas": 400.0,
+          "Wind": 200.0
+        },
+        "green_capacity": 800,
+        "renewable_capacity": 800,
+        "green_perc": 21.6,
+        "renewable_perc": 21.6
+      },
+      "2016": {
+        "total_capacity": 4300,
+        "fuels": {
+          "Coal": 2300.0,
+          "Hydro": 700.0,
+          "Gas": 500.0,
+          "Wind": 500.0,
+          "Solar": 300.0
+        },
+        "green_capacity": 1500,
+        "renewable_capacity": 1500,
+        "green_perc": 34.9,
+        "renewable_perc": 34.9
+      },
+      "2019": {
+        "total_capacity": 4950,
+        "fuels": {
+          "Coal": 2000.0,
+          "Hydro": 800.0,
+          "Gas": 600.0,
+          "Wind": 800.0,
+          "Solar": 600.0,
+          "Nuclear": 150.0
+        },
+        "green_capacity": 2350,
+        "renewable_capacity": 2200,
+        "green_perc": 47.5,
+        "renewable_perc": 44.4
+      }
+    }
+  },
+  "global_summary": {
+    "2013": {
+      "total_capacity": 11230,
+      "Hydro": 3050.0,
+      "Nuclear": 1300.0,
+      "Solar": 350.0,
+      "Coal": 3700.0,
+      "Wind": 350.0,
+      "Gas": 2400.0,
+      "Oil": 80.0
+    },
+    "2016": {
+      "total_capacity": 12450,
+      "Hydro": 3200.0,
+      "Nuclear": 1400.0,
+      "Solar": 1100.0,
+      "Wind": 990.0,
+      "Coal": 3400.0,
+      "Gas": 2300.0,
+      "Oil": 60.0
+    },
+    "2019": {
+      "total_capacity": 14040,
+      "Hydro": 3350.0,
+      "Nuclear": 1650.0,
+      "Solar": 2000.0,
+      "Wind": 1700.0,
+      "Coal": 2950.0,
+      "Gas": 2250.0,
+      "Geothermal": 100.0,
+      "Oil": 40.0
+    }
+  },
+  "country_growth_delta": {
+    "France": {
+      "_total": 400,
+      "Wind": 100.0,
+      "Solar": 200.0,
+      "Nuclear": 100.0,
+      "Hydro": 0.0
+    },
+    "Germany": {
+      "_total": 300,
+      "Wind": 300.0,
+      "Solar": 200.0,
+      "Gas": 50.0,
+      "Coal": -250.0
+    },
+    "USA": {
+      "_total": 600,
+      "Solar": 500.0,
+      "Gas": -400.0,
+      "Nuclear": 100.0,
+      "Geothermal": 100.0,
+      "Wind": 300.0
+    },
+    "Brazil": {
+      "_total": 260,
+      "Wind": 50.0,
+      "Solar": 150.0,
+      "Hydro": 100.0,
+      "Oil": -40.0
+    },
+    "China": {
+      "_total": 1250,
+      "Solar": 600.0,
+      "Gas": 200.0,
+      "Nuclear": 150.0,
+      "Coal": -500.0,
+      "Wind": 600.0,
+      "Hydro": 200.0
+    }
+  },
+  "fuel_types": [
+    "Coal",
+    "Gas",
+    "Geothermal",
+    "Hydro",
+    "Nuclear",
+    "Oil",
+    "Solar",
+    "Wind"
+  ],
+  "years": [
+    "2013",
+    "2016",
+    "2019"
+  ]
+}

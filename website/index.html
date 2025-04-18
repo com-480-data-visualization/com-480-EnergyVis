@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Power Plants</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <link rel="stylesheet" href="style/main.css">
+
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    </head>
+<body>
+
+    <header>
+        <h1>Global Power Plant Visualization</h1>
+        <nav>
+            <button id="tab-summary" class="tab-button active">Summary</button>
+            <button id="tab-distribution" class="tab-button">Plant Distribution</button>
+            <button id="tab-growth" class="tab-button">Power Growth</button>
+        </nav>
+    </header>
+
+    <main>
+        <div id="summary-content" class="tab-content active">
+            <h2>Global Summary (Latest Year)</h2>
+            <div class="content-wrapper">
+                <div class="map-container main-panel">
+                    <div id="map-summary" class="map"></div>
+                </div>
+                <div id="global-summary-stats" class="stats-panel2">
+                    <div id="global-summary-chart"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="distribution-content" class="tab-content">
+             <h2>Plant Distribution (Latest Year)</h2>
+             <div class="content-wrapper">
+                <div class="map-container main-panel">
+                     <div id="map-distribution" class="map"></div>
+                </div>
+                <div id="country-info-distribution" class="side-panel hidden">
+                    <h3>Country Details</h3>
+                    <div id="dist-country-name"></div>
+                    <div id="dist-charts"> 
+                        <div id="dist-fuel-mix-chart"></div>
+                        <div id="dist-green-pie-chart"></div>
+                        <div id="dist-renewable-pie-chart"></div>
+                    </div>
+                    <button class="close-button" onclick="hidePanel('country-info-distribution')">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="growth-content" class="tab-content">
+            <h2>Power Growth (2013-2019)</h2>
+             <div class="content-wrapper">
+                 <div class="map-container main-panel">
+                     <div id="map-growth" class="map"></div>
+                     <div id="growth-legend">
+                         <label for="growth-fuel-select">Show growth for (more options will be added):</label>
+                         <select id="growth-fuel-select">
+                             <option value="_total">Total Capacity</option>
+                             </select>
+                         <div><span style="background-color: red;"></span> Increase</div>
+                         <div><span style="background-color: white; border: 1px solid #ccc;"></span> Stagnant</div>
+                         <div><span style="background-color: blue;"></span> Decrease</div>
+                     </div>
+                 </div>
+                <div id="country-info-growth" class="side-panel hidden">
+                    <h3>Country Growth Trend</h3>
+                    <div id="growth-country-name"></div>
+                    <div id="country-growth-chart"></div>
+                    <button class="close-button" onclick="hidePanel('country-info-growth')">Close</button>
+                </div>
+            </div>
+             <div id="global-growth-stats" class="stats-panel">
+                 <h3>Global Growth Trend (2013-2019) (currently using pseudo data, will be updated)</h3>
+                 <div id="global-growth-chart"></div>
+             </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
