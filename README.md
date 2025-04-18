@@ -45,7 +45,9 @@ What has already been done: On the official website, the WRI shows a map with th
 
 ## Milestone 2 (18th April, 5pm)
 
-### Website
+### Design of the website
+
+### Initial website
 
 Please download this repository. Then, go to the *website* folder and use the command ```http-server``` to access the scratch of our website.
 
