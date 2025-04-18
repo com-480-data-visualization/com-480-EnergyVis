@@ -45,7 +45,7 @@ What has already been done: On the official website, the WRI shows a map with th
 
 ## Milestone 2 (18th April, 5pm)
 
-### Design of the website
+### [Design of the website](milestone_2.pdf)
 
 ### [Initial website](https://olivia-fsm.github.io/energyvis.github.io/)
 
