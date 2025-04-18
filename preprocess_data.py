@@ -1,15 +1,12 @@
-# preprocess_data.py
 import json
 from collections import defaultdict
 import math
 
-# Define fuel categories
 GREEN_FUELS = {"Solar", "Wind", "Hydro", "Nuclear", "Geothermal", "Biomass"}
-RENEWABLE_FUELS = {"Solar", "Wind", "Hydro", "Geothermal", "Biomass"} # Excludes Nuclear
+RENEWABLE_FUELS = {"Solar", "Wind", "Hydro", "Geothermal", "Biomass"} # excludes nuclear
 
-# --- Helper Functions ---
 def calculate_country_stats(plants):
-    """Calculates aggregated stats for a list of plants (typically one country, one year)."""
+    """Computes aggregated stats for a list of plants (typically one country, one year)."""
     stats = {
         'total_capacity': 0,
         'fuels': defaultdict(float),
@@ -26,10 +23,9 @@ def calculate_country_stats(plants):
         if fuel in RENEWABLE_FUELS:
             stats['renewable_capacity'] += capacity
 
-    # Convert defaultdict back to dict for JSON serialization
     stats['fuels'] = dict(stats['fuels'])
 
-    # Calculate percentages
+    # calculate percentages
     if stats['total_capacity'] > 0:
         stats['green_perc'] = round((stats['green_capacity'] / stats['total_capacity']) * 100, 1)
         stats['renewable_perc'] = round((stats['renewable_capacity'] / stats['total_capacity']) * 100, 1)
@@ -40,24 +36,16 @@ def calculate_country_stats(plants):
     return stats
 
 def get_growth(data_start, data_end):
-    """Calculates capacity growth between two points."""
+    """Computes capacity growth between two times."""
     if data_start is None or data_end is None:
-        return 0 # Or None, depending on how you want to handle missing data
+        return 0
     return data_end - data_start
 
 
-# --- Main Processing Logic ---
 def preprocess_data(input_file='raw_data.json', output_file='website/data/processed_data.json'):
     """Loads raw data, processes it, and saves the structured output."""
-    try:
-        with open(input_file, 'r') as f:
-            raw_data = json.load(f)
-    except FileNotFoundError:
-        print(f"Error: Input file '{input_file}' not found.")
-        return
-    except json.JSONDecodeError:
-        print(f"Error: Could not decode JSON from '{input_file}'.")
-        return
+    with open(input_file, 'r') as f:
+        raw_data = json.load(f)
 
     years = sorted(raw_data.keys())
     if not years:
@@ -67,7 +55,7 @@ def preprocess_data(input_file='raw_data.json', output_file='website/data/proces
     start_year = years[0]
 
     processed_data = {
-        'plants_latest': [], # For Plant Distribution map
+        'plants_latest': [], # used for plant distribution map
         'country_summary': defaultdict(lambda: defaultdict(dict)), # {country: {year: {stats}}}
         'global_summary': defaultdict(lambda: defaultdict(float)), # {year: {fuel: capacity, total_capacity: X}}
         'country_growth_delta': defaultdict(lambda: defaultdict(float)), # {country: {fuel: delta_capacity}}
@@ -78,44 +66,43 @@ def preprocess_data(input_file='raw_data.json', output_file='website/data/proces
     all_plants_by_year = defaultdict(list)
     plants_by_country_year = defaultdict(lambda: defaultdict(list))
 
-    # Initial pass: Group plants and collect fuel types
+    # group plants and collect fuel types
     for year, plants in raw_data.items():
         for plant in plants:
-            country = plant.get('country')
-            fuel = plant.get('primary_fuel')
+            country = plant['country']
+            fuel = plant['primary_fuel']
             if country and fuel:
                 processed_data['fuel_types'].add(fuel)
                 all_plants_by_year[year].append(plant)
                 plants_by_country_year[country][year].append(plant)
                 if year == latest_year:
-                     # Keep only necessary fields for the map display
                     processed_data['plants_latest'].append({
                         "country": country,
-                        "lat": plant.get("latitude"),
-                        "lon": plant.get("longitude"),
+                        "lat": plant["latitude"],
+                        "lon": plant["longitude"],
                         "fuel": fuel,
-                        "cap": plant.get("capacity_mw")
+                        "cap": plant["capacity_mw"],
                     })
 
-    # Calculate yearly summaries (global and per country)
+    # compute yearly summaries
     all_countries = plants_by_country_year.keys()
     for year in years:
-        # Global stats for the year
+        # global stats for the year
         global_stats_this_year = calculate_country_stats(all_plants_by_year[year])
         processed_data['global_summary'][year]['total_capacity'] = global_stats_this_year['total_capacity']
         for fuel, capacity in global_stats_this_year['fuels'].items():
              processed_data['global_summary'][year][fuel] = capacity
 
-        # Per-country stats for the year
+        # per-country stats for the year
         for country in all_countries:
              country_plants_this_year = plants_by_country_year[country].get(year, [])
              country_stats_this_year = calculate_country_stats(country_plants_this_year)
              processed_data['country_summary'][country][year] = country_stats_this_year
 
 
-    # Calculate growth delta (start_year to latest_year) per country per fuel
+    # calculate growth delta per country per fuel, form earliest year to latest year
     for country in all_countries:
-        stats_start = processed_data['country_summary'][country].get(start_year, {}).get('fuels', {})
+        stats_start = processed_data['country_summary'][country].get(start_year, {}).get('fuels', {}) 
         stats_latest = processed_data['country_summary'][country].get(latest_year, {}).get('fuels', {})
         all_fuels_for_country = set(stats_start.keys()) | set(stats_latest.keys())
 
@@ -137,20 +124,11 @@ def preprocess_data(input_file='raw_data.json', output_file='website/data/proces
 
 
     # Save the processed data
-    try:
-        # Ensure the output directory exists (create if necessary) - requires Python 3.2+
-        import os
-        output_dir = os.path.dirname(output_file)
-        if output_dir and not os.path.exists(output_dir):
-            os.makedirs(output_dir)
-
-        with open(output_file, 'w') as f:
-            json.dump(processed_data, f, indent=2) # Use indent for readability
-        print(f"Successfully processed data and saved to '{output_file}'")
-    except Exception as e:
-        print(f"Error saving processed data to '{output_file}': {e}")
+    with open(output_file, 'w') as f:
+        json.dump(processed_data, f, indent=2)
+        print(f"Successfully saved to '{output_file}'")
 
 
-# --- Run the script ---
+
 if __name__ == "__main__":
     preprocess_data()

@@ -1,11 +1,10 @@
-/* style/main.css */
 body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100vh; /* min height in viewport height */
 }
 
 header {
@@ -32,32 +31,32 @@ nav button.active {
 }
 
 main {
-    flex-grow: 1; /* Makes main content area fill available space */
+    flex-grow: 1; 
     padding: 15px;
-    display: flex; /* Needed for flex-grow */
-    flex-direction: column; /* Stack tab content vertically */
+    display: flex; 
+    flex-direction: column; 
 }
 
 .tab-content {
-    display: none; /* Hide tabs by default */
+    display: none; 
     flex-direction: column;
-    flex-grow: 1; /* Allow tab content to fill main */
+    flex-grow: 1; 
 }
 
 .tab-content.active {
-    display: flex; /* Show active tab */
+    display: flex; 
 }
 
 .content-wrapper {
     display: flex;
-    flex-grow: 1; /* Allow wrapper to fill tab content */
-    gap: 15px; /* Space between map and side panel */
+    flex-grow: 1; 
+    gap: 15px; /* gap between the rows and between the columns in flexbox */
 }
 
 .main-panel {
-    flex-grow: 1; /* Allow map area to take most space */
+    flex-grow: 1; /* map area should take most of the space */
     display: flex;
-    flex-direction: column; /* Stack map and legend */
+    flex-direction: column; 
 }
 
 .map-container {
@@ -68,20 +67,20 @@ main {
     position: relative; /* Needed for map */
 }
 
-.map {
+.map { /*  the maps should fill all their containers */ 
     width: 100%;
-    height: 100%; /* Fill the container */
+    height: 100%;
 }
 
 
 .side-panel {
     border: 1px solid #ccc;
     padding: 15px;
-    width: 300px; /* Fixed width for side panel */
+    width: 300px; /* 400px; */ 
     background-color: #f9f9f9;
-    overflow-y: auto; /* Add scroll if content overflows */
+    overflow-y: auto; /* allows scroll if overflows */
     box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-    position: relative; /* For close button positioning */
+    position: relative;
 }
 
 .side-panel h3 {
@@ -96,7 +95,7 @@ main {
 }
 
 .stats-panel2 {
-    flex: 0.5; /* Increased from fixed width */
+    flex: 0.5;
     background-color: #f9f9f9;
     padding: 15px;
     border: 1px solid #ccc;
@@ -105,7 +104,7 @@ main {
 }
 
 .hidden {
-    display: none !important; /* Override other display styles */
+    display: none !important; /* overrides ALL previous styling rules for that specific property on that element */
 }
 
 .close-button {
@@ -119,12 +118,12 @@ main {
     font-weight: bold;
 }
 
-/* Simple Legend Styling */
+/* for the legend */
 #growth-legend {
     padding: 5px;
     background: rgba(255, 255, 255, 0.8);
     border: 1px solid #ccc;
-    margin-top: 5px; /* Space between map and legend */
+    margin-top: 5px;
     font-size: 0.9em;
 }
 #growth-legend div {
@@ -138,8 +137,7 @@ main {
     vertical-align: middle;
 }
 
-/* Chart container styling */
 #dist-charts > div, #country-growth-chart, #global-growth-chart, #global-summary-chart {
     margin-top: 15px;
-    min-height: 150px; /* Ensure space for charts */
+    min-height: 150px;
 }
