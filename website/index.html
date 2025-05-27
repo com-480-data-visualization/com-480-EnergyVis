@@ -27,13 +27,21 @@
         <div id="summary-content" class="tab-content active">
             <h2>Global Summary (Latest Year)</h2>
             <div class="content-wrapper">
-                <!-- map -->
                 <div class="map-container main-panel">
                     <div id="map-summary" class="map"></div>
                 </div>
-                <!-- side panel -->
-                <div id="global-summary-stats" class="stats-panel2">
-                    <div id="global-summary-chart"></div>
+                <div id="summary-stats-panel" class="stats-panel2">
+                    <div id="global-summary-content">
+                        <h4>Global Stats (<span id="summary-latest-year-global"></span>)</h4>
+                        <p>Total Capacity: <span id="global-total-capacity">0</span> MW</p>
+                        <div id="global-summary-pie-chart"></div>
+                    </div>
+                    <div id="country-summary-content" class="hidden">
+                        <h3 id="country-summary-title">Country Summary</h3>
+                        <div id="country-fuel-mix-pie-chart"></div>
+                        <div id="country-green-energy-pie-chart"></div>
+                        <div id="country-renewable-energy-pie-chart"></div>
+                    </div>
                 </div>
             </div>
         </div>
