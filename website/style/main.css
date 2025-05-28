@@ -158,7 +158,6 @@ main {
 }
 
 /* Chart containers */
-#dist-charts > div, 
 #summary-charts > div,
 #country-growth-chart, 
 #global-growth-chart, 
@@ -166,6 +165,19 @@ main {
     margin-top: 15px;
     min-height: 150px;
 }
+
+/* updated */
+#country-growth-chart, #global-growth-chart, #global-summary-chart {
+    margin-top: 15px;
+    min-height: 150px;
+}
+
+#dist-fuel-mix-chart,
+#dist-green-pie-chart,
+#dist-renewable-pie-chart {
+    min-height: 300px;
+}
+
 
 /* Specific styling for summary tab charts */
 #summary-charts > div {
