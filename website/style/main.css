@@ -51,6 +51,7 @@ main {
     display: flex;
     flex-grow: 1; 
     gap: 15px; /* gap between the rows and between the columns in flexbox */
+    position: relative; /* Allow absolute positioning of side panels */
 }
 
 .main-panel {
@@ -72,19 +73,33 @@ main {
     height: 100%;
 }
 
-
 .side-panel {
     border: 1px solid #ccc;
     padding: 15px;
-    width: 300px; /* 400px; */ 
+    width: 350px; /* Increased width to accommodate three charts */
     background-color: #f9f9f9;
     overflow-y: auto; /* allows scroll if overflows */
     box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-    position: relative;
+    position: absolute; /* Position absolutely within content-wrapper */
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
+    max-height: 100%;
 }
 
 .side-panel h3 {
     margin-top: 0;
+}
+
+.side-panel h4 {
+    margin: 10px 0 5px 0;
+    color: #333;
+}
+
+.side-panel p {
+    margin: 5px 0;
+    font-size: 0.9em;
 }
 
 .stats-panel {
@@ -116,6 +131,11 @@ main {
     cursor: pointer;
     padding: 2px 5px;
     font-weight: bold;
+    font-size: 12px;
+}
+
+.close-button:hover {
+    background: #ddd;
 }
 
 /* for the legend */
@@ -137,7 +157,92 @@ main {
     vertical-align: middle;
 }
 
-#dist-charts > div, #country-growth-chart, #global-growth-chart, #global-summary-chart {
+/* Chart containers */
+#dist-charts > div, 
+#summary-charts > div,
+#country-growth-chart, 
+#global-growth-chart, 
+#global-summary-chart {
     margin-top: 15px;
     min-height: 150px;
+}
+
+/* Specific styling for summary tab charts */
+#summary-charts > div {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: white;
+}
+
+/* Remove default focus outline and selection styling */
+.leaflet-container {
+    outline: none !important;
+}
+
+.leaflet-container:focus {
+    outline: none !important;
+}
+
+.leaflet-interactive {
+    outline: none !important;
+}
+
+.leaflet-interactive:focus {
+    outline: none !important;
+}
+
+/* Remove any default selection styling */
+.leaflet-clickable {
+    outline: none !important;
+}
+
+.leaflet-zoom-box {
+    outline: none !important;
+}
+
+/* Ensure map elements don't show focus outline */
+#map-summary,
+#map-distribution, 
+#map-growth {
+    outline: none !important;
+}
+
+#map-summary:focus,
+#map-distribution:focus,
+#map-growth:focus {
+    outline: none !important;
+}
+
+/* Remove outline from any SVG elements in the map */
+.leaflet-container svg {
+    outline: none !important;
+}
+
+.leaflet-container path {
+    outline: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .side-panel {
+        width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+    
+    .side-panel {
+        position: relative;
+        width: 100%;
+        max-height: 400px;
+    }
+    
+    .stats-panel2 {
+        flex: none;
+    }
 }
