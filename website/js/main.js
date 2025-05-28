@@ -307,7 +307,15 @@ document.addEventListener('DOMContentLoaded', () => {
             title: `${countryName} - Green Energy (${countryData.green_perc}%)`,
             showlegend: true,
             margin: { l: 10, r: 10, t: 40, b: 10 },
-            height: 250
+            height: 250,
+            legend: {
+                orientation: 'h',   // Horizontal layout
+                x: 0.5,              // Center horizontally
+                y: -0.1,             // Below the plot
+                xanchor: 'center',
+                yanchor: 'top',
+                font: { size: 15 }
+            }
         };
 
         Plotly.newPlot(chartDiv, plotData, layout, {responsive: true});
@@ -341,7 +349,15 @@ document.addEventListener('DOMContentLoaded', () => {
             title: `${countryName} - Renewable Energy (${countryData.renewable_perc}%)`,
             showlegend: true,
             margin: { l: 10, r: 10, t: 40, b: 10 },
-            height: 250
+            height: 250,
+            legend: {
+                orientation: 'h',   // Horizontal layout
+                x: 0.5,              // Center horizontally
+                y: -0.1,             // Below the plot
+                xanchor: 'center',
+                yanchor: 'top',
+                font: { size: 15 }
+            }
         };
 
         Plotly.newPlot(chartDiv, plotData, layout, {responsive: true});
@@ -565,114 +581,7 @@ document.addEventListener('DOMContentLoaded', () => {
         Plotly.newPlot('dist-renewable-pie-chart', renewableMixPlotData, renewableMixLayout, { responsive: true });
         console.log("--- Exiting displayCountryDistributionInfo (charts drawn) ---");
     }
-
-    /*
-    function displayCountryDistributionInfo(countryName) {
-        const latestYear = processedData.years[processedData.years.length - 1];
-        const countryData = processedData.country_summary[countryName]?.[latestYear];
-
-        const panel = document.getElementById('country-info-distribution');
-        const nameDiv = document.getElementById('dist-country-name');
-        const chartsDiv = document.getElementById('dist-charts');
-
-        console.log("Showing distribution panel for:", countryName);
-        showPanel('country-info-distribution');
-
-        nameDiv.textContent = countryName; // Set the country name in the panel
-
-        if (!countryData) {
-            chartsDiv.innerHTML = `<p>No data available for ${countryName} in ${latestYear}.</p>`;
-            return;
-        }
-
-        // --- Fuel Mix Chart (Pie Chart) ---
-        const fuelMixData = Object.entries(countryData)
-            .filter(([key]) => key !== 'total_capacity' && key !== 'green_capacity' && key !== 'renewable_capacity')
-            .map(([fuel, capacity]) => ({ fuel, capacity }));
-
-        const fuelMixPlotData = [{
-            labels: fuelMixData.map(d => d.fuel),
-            values: fuelMixData.map(d => d.capacity),
-            type: 'pie',
-            marker: { colors: fuelMixData.map(d => fuelColors[d.fuel] || fuelColors['Unknown']) },
-            hole: .4,
-            textinfo: 'percent',
-            hoverinfo: 'label+value'
-        }];
-
-        const fuelMixLayout = {
-            title: `Fuel Mix by Capacity (${latestYear})`,
-            showlegend: true,
-            margin: { l: 20, r: 20, t: 40, b: 20 },
-            height: 300
-        };
-
-        Plotly.newPlot('dist-fuel-mix-chart', fuelMixPlotData, fuelMixLayout, { responsive: true });
-
-        // --- Green Energy Mix Chart (Pie Chart) ---
-        const greenCapacity = countryData.green_capacity || 0;
-        const nonGreenCapacity = (countryData.total_capacity || 0) - greenCapacity;
-
-        const greenMixPlotData = [{
-            labels: ['Green Energy', 'Non-Green Energy'],
-            values: [greenCapacity, nonGreenCapacity],
-            type: 'pie',
-            marker: { colors: ['#28a745', '#dc3545'] }, // Green for green, Red for non-green
-            hole: .4,
-            textinfo: 'percent',
-            hoverinfo: 'label+value'
-        }];
-
-        const greenMixLayout = {
-            title: `Green Energy Mix (${latestYear})`,
-            showlegend: true,
-            margin: { l: 20, r: 20, t: 40, b: 20 },
-            height: 300
-        };
-
-        Plotly.newPlot('dist-green-pie-chart', greenMixPlotData, greenMixLayout, { responsive: true });
-
-        // --- Renewable Energy Mix Chart (Pie Chart) ---
-        const renewableCapacity = countryData.renewable_capacity || 0;
-        const nonRenewableCapacity = (countryData.total_capacity || 0) - renewableCapacity;
-
-        const renewableMixPlotData = [{
-            labels: ['Renewable Energy', 'Non-Renewable Energy'],
-            values: [renewableCapacity, nonRenewableCapacity],
-            type: 'pie',
-            marker: { colors: ['#007bff', '#6c757d'] }, // Blue for renewable, Gray for non-renewable
-            hole: .4,
-            textinfo: 'percent',
-            hoverinfo: 'label+value'
-        }];
-
-        const renewableMixLayout = {
-            title: `Renewable Energy Mix (${latestYear})`,
-            showlegend: true,
-            margin: { l: 20, r: 20, t: 40, b: 20 },
-            height: 300,
-        };
-        Plotly.newPlot('dist-renewable-pie-chart', renewableMixPlotData, renewableMixLayout, { responsive: true });
-    }
-    */
-
-    /*
-    function displayCountryDistributionInfo(countryName) {
-
-        const latestYear = processedData.years[processedData.years.length - 1];
-        const countryData = processedData.country_summary[countryName]?.[latestYear];
     
-        const panel = document.getElementById('country-info-distribution');
-        const nameDiv = document.getElementById('dist-country-name');
-        const chartsDiv = document.getElementById('dist-charts');
-    
-        console.log("Showing distribution panel for:", countryName);
-        showPanel('country-info-distribution'); 
-
-        chartsDiv.innerHTML = '<p style="color: black;">Coming soon...</p>';
-    }
-    */
-
     // 5. For the tab 'Power growth'
     // 5.1. Initialize the Power growth tab
     function initGrowthTab() {
