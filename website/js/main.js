@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const layout = {
             title: `${countryName} - Fuel Mix (${year})`,
             showlegend: true,
-            margin: { l: 10, r: 10, t: 40, b: 10 },
+            margin: { l: 60, r: 20, t: 40, b: 60 },
             height: 250
         };
 
