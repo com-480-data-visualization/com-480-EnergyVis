@@ -91,9 +91,8 @@ What to add: We plan to add the prediction of power growth in the future years t
 
 ## Milestone 3 (30th May, 5pm)
 
-**80% of the final grade**
+Website: [energyvis.github.io](https://olivia-fsm.github.io/energyvis.github.io/).
 
-## Late policy
+Process book: [Process_Book.pdf](https://github.com/com-480-data-visualization/com-480-EnergyVis/blob/main/Process_Book.pdf).
 
-- < 24h: 80% of the grade for the milestone
-- < 48h: 70% of the grade for the milestone
+Screen cast: [Screen_Cast.mp4](https://github.com/com-480-data-visualization/com-480-EnergyVis/blob/main/Screen_Cast.mp4).
